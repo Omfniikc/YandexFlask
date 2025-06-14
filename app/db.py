@@ -1,7 +1,7 @@
 import asyncio
 import aiosqlite
 import os
-from flask import g, current_app
+from quart import g, current_app
 
 def init_app(app):
     # закрытие соединения при teardown

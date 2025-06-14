@@ -1,12 +1,12 @@
 import asyncio
 import click
-from flask import Flask, g, current_app, request, jsonify
-from flask_cors import CORS
+from quart import Quart, g, current_app, request, jsonify
+from quart_cors import cors
 from .db import _init_db
 
 def create_app(config_object=None):
-    app = Flask(__name__)
-    CORS(app)
+    app = Quart(__name__)
+    cors(app)
 
     # Загрузка конфигурации
     if config_object:
